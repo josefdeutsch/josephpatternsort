@@ -1,0 +1,18 @@
+#version 450 core
+
+layout (location = 0) out vec4 out_Color;
+layout (binding = 53) uniform sampler2DRect tex;
+
+layout(location = 4) uniform vec2 dims;
+
+in vec2 uv;
+
+//flat in int InstanceID;
+
+void main(void){
+
+   //vec2 coords = ((gl_FragCoord.xy/dims) * 2.0) - 0.5;
+  // vec2 coords = (gl_FragCoord.xy/dims);
+   out_Color = texture(tex, uv);
+
+}
